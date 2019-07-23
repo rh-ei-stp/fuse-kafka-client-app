@@ -1,0 +1,1 @@
+# fuse-kafka-client-app
