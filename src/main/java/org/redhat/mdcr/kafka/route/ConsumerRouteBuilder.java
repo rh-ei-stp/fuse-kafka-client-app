@@ -17,12 +17,14 @@ public class ConsumerRouteBuilder extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
     	
-    	from("prodKafkaConsumer:my-topic?clientId=prodCamelJavaDSLKafkaConsumer&groupId=camelJavaDSLConsumerGroup").autoStartup(prodConsumerRoute)
+    	from("prodKafkaConsumer:my-topic?clientId=prodCamelJavaDSLKafkaConsumer&groupId=camelJavaDSLConsumerGroup")
+    		.autoStartup(prodConsumerRoute)
     		.routeId("prodConsumer")
     		.log("Production Consumer-> ${body}")
 			;
     	
-    	from("drKafkaConsumer:my-topic?clientId=drCamelJavaDSLKafkaConsumer&groupId=camelJavaDSLConsumerGroup").autoStartup(drConsumerRoute)
+    	from("drKafkaConsumer:my-topic?clientId=drCamelJavaDSLKafkaConsumer&groupId=camelJavaDSLConsumerGroup")
+    		.autoStartup(drConsumerRoute)
     		.routeId("drConsumer")
 			.log("DR Consumer-> ${body}")
 			;
