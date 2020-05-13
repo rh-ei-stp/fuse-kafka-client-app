@@ -15,8 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- configure the Fuse version you want to use here -->
-		<fuse.version>7.3.0.fuse-730058-redhat-00001</fuse.version>
-
+		<fuse.version>7.6.0.fuse-sb2-760028-redhat-00001</fuse.version>
 		<!-- maven plugin versions -->
 		<maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
 		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
@@ -41,20 +40,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-undertow</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.apache.camel</groupId>
@@ -66,29 +51,16 @@
 		  <groupId>org.apache.camel</groupId>
 		  <artifactId>camel-kafka-starter</artifactId>
 		</dependency>
-
+	   <dependency>
+	     <groupId>org.apache.kafka</groupId>
+	     <artifactId>kafka-clients</artifactId>
+	   </dependency>
 		<!-- testing -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.jboss.arquillian.junit</groupId>
-			<artifactId>arquillian-junit-container</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.arquillian.cube</groupId>
-			<artifactId>arquillian-cube-openshift</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>io.fabric8</groupId>
-			<artifactId>kubernetes-assertions</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 
 	<build>
